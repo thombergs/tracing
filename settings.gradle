@@ -1,0 +1,10 @@
+pluginManagement {
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+}
+
+include "downstream-service"
+include "upstream-service"

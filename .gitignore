@@ -1,0 +1,3 @@
+# Project exclude paths
+/downstream-service/target/
+/upstream-service/target/
