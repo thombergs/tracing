@@ -12,19 +12,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="downstream" />
-        <module name="upstream" />
+        <module name="customer-service" />
+        <module name="api-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
+      <module name="frontend-service" target="1.8" />
       <module name="tracing.main" target="16" />
       <module name="tracing.test" target="16" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="downstream" options="-parameters" />
-      <module name="upstream" options="-parameters" />
+      <module name="api-service" options="-parameters" />
+      <module name="customer-service" options="-parameters" />
+      <module name="frontend-service" options="-parameters" />
     </option>
   </component>
 </project>

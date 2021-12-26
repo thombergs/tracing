@@ -1,17 +1,11 @@
-server.port: 8080
-
-addressClient:
-  baseUrl: http://upstream:8081
-
-customerClient:
-  baseUrl: http://upstream:8081
+server.port: 8081
 
 spring:
   output:
     ansi:
       enabled: always
   application:
-    name: downstream-service
+    name: customer-service
 
   sleuth:
     otel:

@@ -22,7 +22,7 @@ public class Controller {
     this.addressClient = addressClient;
   }
 
-  @GetMapping(path = "customers-with-address/{id}")
+  @GetMapping(path = "customers/{id}")
   public CustomerAndAddress getCustomerWithAddress(@PathVariable("id") long customerId){
     logger.info("COLLECTING CUSTOMER AND ADDRESS WITH ID {} FROM UPSTREAM SERVICE", customerId);
     Customer customer = customerClient.getCustomer(customerId);

@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,11 +26,14 @@ public class Controller {
     Customer customer = new Customer();
     customer.setId(customerId);
     customer.setName(NAMES.get((int) customerId));
-    return new ResponseEntity<>(customer, HttpStatus.OK);
+
+    throw new IllegalStateException("BWAAAH!");
+
+//    return new ResponseEntity<>(customer, HttpStatus.OK);
   }
 
   @GetMapping(path = "addresses/{id}")
-  public ResponseEntity<Address> getAddress(@PathVariable("id") long customerId) {
+  public ResponseEntity<Address> getAddress(@PathVariable("id") long customerId) throws InterruptedException {
     logger.info("GETTING ADDRESS FOR CUSTOMER WITH ID {}", customerId);
     if (customerId < 0 || customerId > NAMES.size() - 1) {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -37,6 +41,7 @@ public class Controller {
     Address address = new Address();
     address.setId(customerId);
     address.setStreet(STREETS.get((int) customerId));
+
     return new ResponseEntity<>(address, HttpStatus.OK);
   }
 
